@@ -1,0 +1,72 @@
+/**
+* Implement hook_menu().
+*/
+function
+ 
+sections_menu() {
+  
+$items [
+'sections'
+] = array(
+  
+'page callback'
+ 
+=> 
+'all_sections_page'
+,
+  
+'access arguments'
+ 
+=> array(
+'access content'
+),
+  
+);
+  
+return
+ 
+$items;
+};
+/**
+* hook_theme()
+*/
+function
+ 
+sections_theme() {
+return
+ 
+array(
+'all_sections'
+ 
+=> array(
+'template'
+ 
+=> 
+'all-sections'
+,
+),
+);
+}
+/**
+* All sections callback
+*/
+function
+ 
+all_sections_page() {
+  
+$path = Drupal_get_path(
+'module'
+, 
+'sections'
+);
+  
+Drupal_add_js($path . 
+'/js/sections.gen.js'
+);
+  
+return
+ 
+theme(
+'all_sections'
+);
+}

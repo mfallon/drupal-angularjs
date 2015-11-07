@@ -1,0 +1,4 @@
+name = Sections
+description = Angular sections
+core = 7.x
+package = Sections
